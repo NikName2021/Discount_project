@@ -1,0 +1,602 @@
+{
+    "0": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi 9A / 6.53'' / 1600x720 / 2 ГБ / 32 ГБ / 5000 мА*ч",
+        "Цена": "6 922 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/13615125/detail.aspx?targetUrl=GP"
+    },
+    "1": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / 6.67\" / 2400 x 1080 / AMOLED / 8 ГБ / 256 ГБ / 108 Мп / 5000 mAh",
+        "Цена": "24 985 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/67866097/detail.aspx?targetUrl=GP"
+    },
+    "2": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Poco M4 Pro / 6.43\" / 2400x1080 / AMOLED / 6 ГБ / 128 ГБ / 5000 mAh",
+        "Цена": "22 743 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/66069790/detail.aspx?targetUrl=GP"
+    },
+    "3": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / Note 10 Pro / 6.95'' / 2460x1080 / IPS / 8 ГБ / 128 ГБ / 64 Мп / 5000 mAh",
+        "Цена": "15 612 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/38435328/detail.aspx?targetUrl=GP"
+    },
+    "4": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi 9A / 6.53'' / 1600x720 / 2 ГБ / 32 ГБ / 5000 мА*ч",
+        "Цена": "6 922 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/84018137/detail.aspx?targetUrl=GP"
+    },
+    "5": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / С35 / 6,6 / 2408 x 1080 / LED дисплей / 4 GB / 128 GB / 50 Мп / 5000",
+        "Цена": "13 593 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/111864727/detail.aspx?targetUrl=GP"
+    },
+    "6": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / Redmi Note 10T Graphite Gray / 6.5'' / 2400x1080 / IPS / 4 ГБ / 128 ГБ / 48 Мп / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/30967922/detail.aspx?targetUrl=GP"
+    },
+    "7": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / Note 10 Pro / 6.67'' / 2400x1080 / AMOLED / 8 ГБ / 128 ГБ / 108 Мп / 5020 мА*ч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/28980742/detail.aspx?targetUrl=GP"
+    },
+    "8": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны С35 / 6,6 / 2408 x 1080 / LED дисплей / 4 GB / 128 GB / 5000",
+        "Цена": "13 593 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/111864728/detail.aspx?targetUrl=GP"
+    },
+    "9": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / 6.67\" / 2400 x 1080 / AMOLED / 8 ГБ / 256 ГБ / 108 Мп / 5000 mAh",
+        "Цена": "24 985 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/67866095/detail.aspx?targetUrl=GP"
+    },
+    "10": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi 9A / 6.53'' / 1600x720 / 2 ГБ / 32 ГБ / 5000 мА*ч",
+        "Цена": "6 922 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/88962425/detail.aspx?targetUrl=GP"
+    },
+    "11": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / Note 10 Pro / 6.95'' / 2460x1080 / IPS / 8 ГБ / 128 ГБ / 64 Мп / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/35683124/detail.aspx?targetUrl=GP"
+    },
+    "12": {
+        "Бренд": "Apple",
+        "Название": "Смартфоны / iPhone 11 128GB MHDH3RM/A / 6.1\" / 1792x828 / IPS / 4 ГБ / 128 ГБ / 12 Мп / 3110 mAh",
+        "Цена": "50 040 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/86123929/detail.aspx?targetUrl=GP"
+    },
+    "13": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / realme 9 5G / 6.6 / 2412x1080 / Super Clear LCD / 4 GB / 128 GB / 50 Мп / 5000 m*Ah",
+        "Цена": "15 832 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/121028588/detail.aspx?targetUrl=GP"
+    },
+    "14": {
+        "Бренд": "TECNO",
+        "Название": "Смартфоны Tecno Spark 8c / 6,6 / IPS / 4 GB / 64 GB / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/61914203/detail.aspx?targetUrl=GP"
+    },
+    "15": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / C25S / 6.5'' / 1600 x 720 / HD+ / 4 ГБ / 128 ГБ / 48 Мп / 6000 мАч",
+        "Цена": "13 593 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/39769256/detail.aspx?targetUrl=GP"
+    },
+    "16": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi note 11 / 6,43\" / 2400 x 1080 / IPS / 4 ГБ / 128 ГБ / 5000 mAh",
+        "Цена": "18 753 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/72295495/detail.aspx?targetUrl=GP"
+    },
+    "17": {
+        "Бренд": "TECNO",
+        "Название": "Смартфоны Tecno Spark 8c / 6,6 / IPS / 4 GB / 64 GB / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/81261124/detail.aspx?targetUrl=GP"
+    },
+    "18": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / Realme c30 / 6,5 дюйма / 1600 х 720 / LCD / 2 GB / 32GB / 8 Мп / 5000 mAh",
+        "Цена": "6 993 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/114560729/detail.aspx?targetUrl=GP"
+    },
+    "19": {
+        "Бренд": "TECNO",
+        "Название": "Смартфоны 6.6” FHD+ / 1080*2460 / Сенсорный / 4 ГБ / 128 ГБ / 5000 мАч",
+        "Цена": "12 312 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/97858278/detail.aspx?targetUrl=GP"
+    },
+    "20": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / Realme c30 / 6.5 \" дюйма / 1600 х 720 / Super LCD / 4 GB / 64 GB / 8 Мп / 5000 m*Ah",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/114577367/detail.aspx?targetUrl=GP"
+    },
+    "21": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / Realme c30 / 6,5 дюйма / 1600 х 720 / LCD / 2 GB / 32 GB / 8 Мп / 5000 mAh",
+        "Цена": "6 993 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/114555640/detail.aspx?targetUrl=GP"
+    },
+    "22": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / 6,7 \" / 1080 x 2400 / AMOLED / 8 ГБ / 256 ГБ / 108 Мп / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/117964070/detail.aspx?targetUrl=GP"
+    },
+    "23": {
+        "Бренд": "TECNO",
+        "Название": "Смартфоны 6.6” FHD+ / 1080*2460 / Сенсорный / 4 ГБ / 128 ГБ / 5000 мАч",
+        "Цена": "12 312 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/94988349/detail.aspx?targetUrl=GP"
+    },
+    "24": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / 6,7 \" / 1080 x 2400 / AMOLED / 8 ГБ / 256 ГБ / 108 Мп / 5000 mAh",
+        "Цена": "19 742 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/117962430/detail.aspx?targetUrl=GP"
+    },
+    "25": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны С35 / 6.6 / 2408 x 1080 / LED дисплей / 4 GB / 64 GB / 5000 m*Ah",
+        "Цена": "12 233 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/111864107/detail.aspx?targetUrl=GP"
+    },
+    "26": {
+        "Бренд": "POCO",
+        "Название": "Смартфоны POCO M5s / 6.43\" / 2400 x 1080 / 4 ГБ / 128 ГБ / 5000 мАч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/120907792/detail.aspx?targetUrl=GP"
+    },
+    "27": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / Redmi Note 10S Onyx Gray / 6.43'' / 2400x1080 / AMOLED / 6 ГБ / 64 ГБ / 64 Мп / 5000 mAh",
+        "Цена": "18 753 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/30319479/detail.aspx?targetUrl=GP"
+    },
+    "28": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / Realme c30 / 6.5 \" дюйма / 1600 х 720 / Super LCD / 4 GB / 64 GB / 8 Мп / 5000 mAh",
+        "Цена": "7 793 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/114578081/detail.aspx?targetUrl=GP"
+    },
+    "29": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны C25S / 6.5'' / HD+ / 4 ГБ / 64 ГБ / 6000 мAч",
+        "Цена": "11 553 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/46015369/detail.aspx?targetUrl=GP"
+    },
+    "30": {
+        "Бренд": "Apple",
+        "Название": "Смартфоны / iPhone 11 64GB MHDA3RM/A / 6.1\" / 1792x828 / IPS / 4 ГБ / 64 ГБ / 12 Мп / 3110 mAh",
+        "Цена": "45 590 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/86123932/detail.aspx?targetUrl=GP"
+    },
+    "31": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Xiaomi 11T / 6.67\" / 2400 x 1080 / AMOLED / 8 ГБ / 128 ГБ / 5000 mAh",
+        "Цена": "32 842 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/116316231/detail.aspx?targetUrl=GP"
+    },
+    "32": {
+        "Бренд": "TECNO",
+        "Название": "Смартфоны Camon 19 / 6.78 / 1080*2460 / IPS / 6 ГБ / 128 ГБ / 5000 мА*ч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/92265906/detail.aspx?targetUrl=GP"
+    },
+    "33": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны REDMI Note 11S / 6,43\" / 2400x1080 / AMOLED / 6 / 128 / 5000 mAh",
+        "Цена": "23 793 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/72283730/detail.aspx?targetUrl=GP"
+    },
+    "34": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Poco X4 GT / 6,6\" / 2460 х 1080 / IPS 144 Гц / 8 ГБ / 256 ГБ / 5080 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/113245046/detail.aspx?targetUrl=GP"
+    },
+    "35": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны redmi 10a / 6.53” / 1600 x 720 / IPS / 2 ГБ / 32 ГБ / 5000 мАч",
+        "Цена": "9 965 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/116110648/detail.aspx?targetUrl=GP"
+    },
+    "36": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / С35 / 6.6 / 2408 x 1080 / LED дисплей / 4 GB / 64 GB / 50 Мп / 5000 m*Ah",
+        "Цена": "12 233 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/111864106/detail.aspx?targetUrl=GP"
+    },
+    "37": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Xiaomi 12X / 6,28\" / 2400 x 1080 / AMOLED / 8 ГБ / 256 ГБ / 4500 mAh",
+        "Цена": "49 874 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/116351004/detail.aspx?targetUrl=GP"
+    },
+    "38": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / Realme C31 / 6.5 \" - дюйма / 1600x720 / HD IPS / 4 GB / 64 GB / 13 Мп / 5000 mAh",
+        "Цена": "9 233 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/115119681/detail.aspx?targetUrl=GP"
+    },
+    "39": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Poco X4 GT / 6,6\" / 2460 х 1080 / IPS 144 Гц / 8 ГБ / 256 ГБ / 5080 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/113245048/detail.aspx?targetUrl=GP"
+    },
+    "40": {
+        "Бренд": "TECNO",
+        "Название": "Смартфоны TECNO Spark Go / 6,5\" / 720*1600 / IPS / 2 GB / 32 GB / 5000 мAh",
+        "Цена": "7 992 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/61900895/detail.aspx?targetUrl=GP"
+    },
+    "41": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / Realme c30 / 6,5 дюйма / 1600 х 720 / LCD / 2 GB / 32 GB / 8 Мп / 5000 m*Ah",
+        "Цена": "6 993 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/114564576/detail.aspx?targetUrl=GP"
+    },
+    "42": {
+        "Бренд": "VIVO",
+        "Название": "Смартфоны / 6.44\" / 2400 x 1080 / AMOLED / 6 ГБ / 128 ГБ / 50 Мп / 5000 mAh",
+        "Цена": "15 863 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/113238983/detail.aspx?targetUrl=GP"
+    },
+    "43": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Poco M4 Pro / 6.43\" / 2400x1080 / AMOLED / 8 ГБ / 256 ГБ / 5000 mAh",
+        "Цена": "35 991 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/66070237/detail.aspx?targetUrl=GP"
+    },
+    "44": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / 6.67\" / 2400 x 1080 / AMOLED / 8 ГБ / 256 ГБ / 108 Мп / 5000 mAh",
+        "Цена": "26 514 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/67866096/detail.aspx?targetUrl=GP"
+    },
+    "45": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны C11 / 6.5'' / 1600x720 / LCD / 2 ГБ / 32 ГБ / 5000 mAh",
+        "Цена": "7 972 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/28199302/detail.aspx?targetUrl=GP"
+    },
+    "46": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны Realme 9 / 6,4 / 2400x1080 / Super AMOLED / 6 GB / 128 GB / 5000 mAh",
+        "Цена": "20 293 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/111889334/detail.aspx?targetUrl=GP"
+    },
+    "47": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Poco M4 Pro / 6.43\" / 2400x1080 / AMOLED / 6 ГБ / 128 ГБ / 5000 mAh",
+        "Цена": "22 743 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/66069789/detail.aspx?targetUrl=GP"
+    },
+    "48": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi note 11 / 6,43\" / 2400 x 1080 / IPS / 4 ГБ / 128 ГБ / 5000 mAh",
+        "Цена": "18 753 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/72295496/detail.aspx?targetUrl=GP"
+    },
+    "49": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны POCO C40 / 6,71\" / 1650 x 720 / IPS / 64 ГБ / 4 ГБ / 6000 мАч",
+        "Цена": "11 431 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/114713906/detail.aspx?targetUrl=GP"
+    },
+    "50": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Poco M4 Pro / 6.43\" / 2400x1080 / AMOLED / 8 ГБ / 256 ГБ / 5000 mAh",
+        "Цена": "22 794 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/78487675/detail.aspx?targetUrl=GP"
+    },
+    "51": {
+        "Бренд": "POCO",
+        "Название": "Смартфоны POCO M5s / 6.43\" / 2400 x 1080 / 4 ГБ / 128 ГБ / 5000 мАч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/121088620/detail.aspx?targetUrl=GP"
+    },
+    "52": {
+        "Бренд": "OPPO",
+        "Название": "Смартфоны / A55 / 6.51 / 1600 х 720 / LCD / 4 ГБ / 64 GB / 50 Мп / 5000 mAh",
+        "Цена": "13 672 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/55919141/detail.aspx?targetUrl=GP"
+    },
+    "53": {
+        "Бренд": "POCO",
+        "Название": "Смартфоны POCO C40 / 6,71\" / 1650 x 720 / IPS / 3 ГБ / 32 ГБ / 6000 mAh",
+        "Цена": "10 431 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/114714657/detail.aspx?targetUrl=GP"
+    },
+    "54": {
+        "Бренд": "Apple",
+        "Название": "Смартфоны 6.7\" / 2778х1284 / OLED / 256 ГБ",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/120272919/detail.aspx?targetUrl=GP"
+    },
+    "55": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / 6,67\" / 2400 x 1080 / AMOLED / 6 ГБ / 128 ГБ / 108 Мп / 5000 mAh",
+        "Цена": "22 535 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/67865980/detail.aspx?targetUrl=GP"
+    },
+    "56": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi 10 2022 / 6.5\" / 2400 x 1080 / IPS / 4 ГБ / 64 ГБ / 5000 mAh",
+        "Цена": "15 970 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/87256670/detail.aspx?targetUrl=GP"
+    },
+    "57": {
+        "Бренд": "Samsung",
+        "Название": "Смартфоны SM-A525FZKDSKZ / 6.5\" / 2400x1080 / Super AMOLED / 4 ГБ / 128 ГБ / 4500 mAh",
+        "Цена": "22 394 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/92495220/detail.aspx?targetUrl=GP"
+    },
+    "58": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi note 11 pro / 6,67\" / 2400 x 1080 / AMOLED / 8 / 128 / 5000 mAh",
+        "Цена": "31 592 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/72287625/detail.aspx?targetUrl=GP"
+    },
+    "59": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / HOT 12 PRO / 6,6\" / 720x1612 / IPS / 8 / 128 / 50 Мп / 5000 mAh",
+        "Цена": "12 772 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/114477950/detail.aspx?targetUrl=GP"
+    },
+    "60": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi Note 11 Pro 5G / 6,67\" / 2400 x 1080 / AMOLED / 8 ГБ / 128 ГБ / 5000 mAh",
+        "Цена": "31 942 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/72288318/detail.aspx?targetUrl=GP"
+    },
+    "61": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi 10 2022 / 6.5\" / 2400 x 1080 / IPS / 4 ГБ / 128 ГБ / 5000 mAh",
+        "Цена": "17 850 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/87256267/detail.aspx?targetUrl=GP"
+    },
+    "62": {
+        "Бренд": "Samsung",
+        "Название": "Смартфоны SM-A135FLBKCAU / 6.6\" / 2408x1080 / PLS / 4 ГБ / 128 ГБ / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/113254239/detail.aspx?targetUrl=GP"
+    },
+    "63": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Poco M4 Pro / 6.43\" / 2400x1080 / AMOLED / 8 ГБ / 256 ГБ / 5000 mAh",
+        "Цена": "35 991 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/66070236/detail.aspx?targetUrl=GP"
+    },
+    "64": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / AMOLED / 8 ГБ / 256 ГБ / 108 Мп",
+        "Цена": "35 492 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/44584205/detail.aspx?targetUrl=GP"
+    },
+    "65": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / Redmi note 11 / 6.43\" / 2400 x 1080 / IPS / 4 ГБ / 64 ГБ / 50 Мп / 5000 mAh",
+        "Цена": "16 733 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/65373048/detail.aspx?targetUrl=GP"
+    },
+    "66": {
+        "Бренд": "TECNO",
+        "Название": "Смартфоны / Camon 19 Pro / 6.78 / 1080*2460 / IPS / 8 ГБ / 128 ГБ / 64 Мп / 5000 мАч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/92267714/detail.aspx?targetUrl=GP"
+    },
+    "67": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны POCO C40 / 6,71\" / 1650 x 720 / IPS / 64 ГБ / 4 ГБ / 6000 мАч",
+        "Цена": "11 431 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/114713905/detail.aspx?targetUrl=GP"
+    },
+    "68": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / realme 8i 4/128 / 2412x1080 / LCD / 4 ГБ / 128 ГБ / 50 Мп / 5000мАч",
+        "Цена": "16 792 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/43502518/detail.aspx?targetUrl=GP"
+    },
+    "69": {
+        "Бренд": "VIVO",
+        "Название": "Смартфоны / vivo V25e / 6.44 / 2404×1080 / AMOLED / 8 ГБ / 128 ГБ / 64 Мп / 4500 мА*ч",
+        "Цена": "19 319 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/121026731/detail.aspx?targetUrl=GP"
+    },
+    "70": {
+        "Бренд": "POCO",
+        "Название": "Смартфоны POCO M5s / 2400 x 1080 / 4 ГБ / 64 ГБ / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/121095201/detail.aspx?targetUrl=GP"
+    },
+    "71": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / NOTE 12 / 6.7\" / 1080 x 2400 / AMOLED / 6 / 128 / 50 Мп / 5000 mAh",
+        "Цена": "13 482 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/111504828/detail.aspx?targetUrl=GP"
+    },
+    "72": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны Realme C21 Y / 6.5'' / HD+ / 3 ГБ / 32 ГБ / 5000 мАч",
+        "Цена": "8 153 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/45997083/detail.aspx?targetUrl=GP"
+    },
+    "73": {
+        "Бренд": "OPPO",
+        "Название": "Смартфоны / Reno7 / 6.40 / 2400 x 1080 / Безрамочный дисплей / 8 / 128 / 64 Мп / 4500.00",
+        "Цена": "21 272 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/116872733/detail.aspx?targetUrl=GP"
+    },
+    "74": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / HOT 12i / 6,6\" / 1600 x 720 / IPS / 4 / 64 / 13 Мп / 5000 mAh",
+        "Цена": "8 512 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/81588760/detail.aspx?targetUrl=GP"
+    },
+    "75": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / HOT 11S / 6.7'' / 2040x1080 / IPS / 6 ГБ / 128 ГБ / 50 Мп / 5000 mAh",
+        "Цена": "12 772 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/48033358/detail.aspx?targetUrl=GP"
+    },
+    "76": {
+        "Бренд": "POCO",
+        "Название": "Смартфоны POCO M5s / 6.43\" / 2400 x 1080 / 4 ГБ / 128 ГБ / 5000 мАч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/102181605/detail.aspx?targetUrl=GP"
+    },
+    "77": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны C25S / 6.5'' / 1600x720 / IPS / 4 ГБ / 128 ГБ / 6000 мАч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/73227309/detail.aspx?targetUrl=GP"
+    },
+    "78": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны redmi 10a / 6.53” / 1600 x 720 / IPS / 2 ГБ / 32 ГБ / 5000 мАч",
+        "Цена": "9 965 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/117931138/detail.aspx?targetUrl=GP"
+    },
+    "79": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi 10C / 6,71\" / 1920 x 1080 / IPS / 4 ГБ / 128 ГБ / 5000 mAh",
+        "Цена": "15 792 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/75664919/detail.aspx?targetUrl=GP"
+    },
+    "80": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны Redmi 10 2022 / 6.5\" / 2400 x 1080 / IPS / 4 ГБ / 64 ГБ / 5000 mAh",
+        "Цена": "15 970 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/87256669/detail.aspx?targetUrl=GP"
+    },
+    "81": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / HOT 11S / 6,78 / 2040x1080 / IPS / 4 ГБ / 64 ГБ / 50 Мп / 5000 mAh",
+        "Цена": "10 642 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/45338058/detail.aspx?targetUrl=GP"
+    },
+    "82": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / HOT 11S / 6.7'' / 2040x1080 / IPS / 6 ГБ / 128 ГБ / 50 Мп / 5000 mAh",
+        "Цена": "12 772 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/110847825/detail.aspx?targetUrl=GP"
+    },
+    "83": {
+        "Бренд": "VIVO",
+        "Название": "Смартфоны / vivo V25e / 6.44 / 2404×1080 / AMOLED / 8 ГБ / 128 ГБ / 64 Мп / 4500 мА*ч",
+        "Цена": "19 319 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/121026730/detail.aspx?targetUrl=GP"
+    },
+    "84": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / 6,7 \" / 1080 x 2400 / AMOLED / 8 ГБ / 256 ГБ / 108 Мп / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/119444021/detail.aspx?targetUrl=GP"
+    },
+    "85": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны 11 Lite 5G NE / 6.55 / 2400x1080 / AMOLED / 128 GB / 4250 мА*ч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/116791494/detail.aspx?targetUrl=GP"
+    },
+    "86": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / Realme 9 / 6.4\" / 2400x1080 / Super AMOLED / 6 GB / 128 GB / 108 Мп / 5000 mAh",
+        "Цена": "20 293 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/111889253/detail.aspx?targetUrl=GP"
+    },
+    "87": {
+        "Бренд": "Samsung",
+        "Название": "Смартфоны SM-A325FLVDSKZ / 6.4\" / 2400x1080 / Super AMOLED / 4 ГБ / 64 ГБ / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/94659306/detail.aspx?targetUrl=GP"
+    },
+    "88": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / AMOLED / 8 ГБ / 128 ГБ / 108 Мп / 5000 мА*ч",
+        "Цена": "32 842 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/47716114/detail.aspx?targetUrl=GP"
+    },
+    "89": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / Redmi Note 10S Onyx Gray / 6.43'' / 2400x1080 / AMOLED / 6 ГБ / 128 ГБ / 64 Мп / 5000 mAh",
+        "Цена": "20 693 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/30319481/detail.aspx?targetUrl=GP"
+    },
+    "90": {
+        "Бренд": "Xiaomi",
+        "Название": "Смартфоны / Redmi note 11 / 6.43\" / 2400 x 1080 / IPS / 4 ГБ / 64 ГБ / 50 Мп / 5000 mAh",
+        "Цена": "16 733 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/67983222/detail.aspx?targetUrl=GP"
+    },
+    "91": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны C25S / 6.5'' / HD+ / 4 ГБ / 64 ГБ / 6000 мAч",
+        "Цена": "11 553 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/46015370/detail.aspx?targetUrl=GP"
+    },
+    "92": {
+        "Бренд": "VIVO",
+        "Название": "Смартфоны / 6.44\" / AMOLED / 6 ГБ / 50 Мп / 5000 mAh",
+        "Цена": "15 863 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/113197100/detail.aspx?targetUrl=GP"
+    },
+    "93": {
+        "Бренд": "TECNO",
+        "Название": "Смартфоны / Camon 19 Pro / 6.78 / 1080*2460 / IPS / 8 ГБ / 128 ГБ / 64 Мп / 5000 мАч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/92267713/detail.aspx?targetUrl=GP"
+    },
+    "94": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны Realme C21 Y / 6.5'' / HD+ / 3 ГБ / 32 ГБ / 5000 мАч",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/45997084/detail.aspx?targetUrl=GP"
+    },
+    "95": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / HOT 12 Play / 6,82\" / 1600 x 720 / IPS / 4 / 64 / 13 Мп / 6000 mAh",
+        "Цена": "9 222 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/81588758/detail.aspx?targetUrl=GP"
+    },
+    "96": {
+        "Бренд": "Apple",
+        "Название": "Смартфоны iPhone 13 Pro Max 256GB MLMA3RK/A / 6.7\" / 2778x1284 / OLED / 256 ГБ",
+        "Цена": "114 652 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/113244899/detail.aspx?targetUrl=GP"
+    },
+    "97": {
+        "Бренд": "Realme",
+        "Название": "Смартфоны / C25S / 6.5'' / 1600 x 720 / HD+ / 4 ГБ / 128 ГБ / 48 Мп / 6000 мАч",
+        "Цена": "13 593 ₽",
+        "Ссылка": "https://www.wildberries.ru/catalog/39769257/detail.aspx?targetUrl=GP"
+    },
+    "98": {
+        "Бренд": "Infinix",
+        "Название": "Смартфоны / HOT 11S / 6.7'' / 2040x1080 / IPS / 6 ГБ / 128 ГБ / 50 Мп / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/48033357/detail.aspx?targetUrl=GP"
+    },
+    "99": {
+        "Бренд": "POCO",
+        "Название": "Смартфоны POCO M5s / 2400 x 1080 / 4 ГБ / 64 ГБ / 5000 mAh",
+        "Цена": null,
+        "Ссылка": "https://www.wildberries.ru/catalog/102177026/detail.aspx?targetUrl=GP"
+    }
+}
