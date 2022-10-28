@@ -5,15 +5,17 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, \
     QMainWindow, QDialog, QHeaderView, QTableWidgetItem, QPushButton, QMessageBox
 from PyQt5 import uic
-from connection import con, cur
+from connection import conn, cur
 from par import one_pars
 
 
 class RegisterPage(QDialog):
     def __init__(self):
+        self.flag = False
         super(RegisterPage, self).__init__()
         uic.loadUi('add_product.ui', self)
-        names = [i[1] for i in cur.execute("SELECT * FROM shops").fetchall()]
+        cur.execute("SELECT * FROM shops")
+        names = [i[1] for i in cur.fetchall()]
         self.comboBox.addItems(names)
         self.pushButton.clicked.connect(self.run)
         self.pushButton_2.clicked.connect(self.close_win)
@@ -32,11 +34,12 @@ class RegisterPage(QDialog):
         elif not validators.url(url):
             self.label_3.setText("Неверная ссылка")
         else:
-            last_product = cur.execute('SELECT * FROM urls WHERE url = ?', (url,)).fetchone()
+            cur.execute('SELECT * FROM urls WHERE url = %s', (url,))
+            last_product = cur.fetchall()
             if not last_product:
-                cur.execute("INSERT INTO urls (shop, name, url, last_price, prices) VALUES (?, ?, ?, ?, ?)",
+                cur.execute("INSERT INTO urls (shop, name, url, last_prices, prices) VALUES (%s, %s, %s, %s, %s)",
                             (shop, name, url, 0, 0))
-                con.commit()
+                self.flag = True
                 self.close()
             else:
                 self.label_3.setText("Такой товар уже существует")
@@ -68,17 +71,19 @@ class MyWidget(QMainWindow):
     def add(self):
         register_page = RegisterPage()
         register_page.exec_()
-        self.load_date()
-        # last_product = cur.execute('SELECT * FROM urls ORDER BY id DESC LIMIT 1').fetchone()
-        # one_pars(last_product)
-        # self.load_date()
+        if register_page.flag:
+            self.load_date()
+            cur.execute('SELECT * FROM urls ORDER BY id DESC LIMIT 1')
+            one_pars(cur.fetchone())
+            self.load_date()
 
     def profile(self):
         register_page = ProfilePage()
         register_page.exec_()
 
     def load_date(self):
-        products = cur.execute("SELECT * FROM urls").fetchall()
+        cur.execute("SELECT * FROM urls")
+        products = cur.fetchall()
 
         title = ["Магазин", "Название", "Ссылка", "Цена, ₽", "GR", "Удалить"]
         self.tableWidget.setColumnCount(len(title))
@@ -116,8 +121,7 @@ class MyWidget(QMainWindow):
 
     def del_product(self):
         az = self.sender().objectName()
-        cur.execute(f"DELETE from urls where id = ?", (int(az),))
-        con.commit()
+        cur.execute(f"DELETE from urls where id = %s", (int(az),))
         self.load_date()
 
     def price_chart(self):
@@ -125,7 +129,7 @@ class MyWidget(QMainWindow):
         print(az)
 
     def closeEvent(self, event):
-        con.close()
+        conn.close()
 
 
 def except_hook(cls, exception, traceback):

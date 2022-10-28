@@ -4,7 +4,7 @@ from fake_useragent import UserAgent
 import undetected_chromedriver
 from multiprocessing.dummy import Pool as ThreadPool
 import datetime
-from connection import cur, con
+from connection import cur, conn
 
 
 def parser(url):
@@ -45,23 +45,28 @@ def wb(html, key, key_class):
 
 
 def all_pars():
-    products = cur.execute("SELECT * FROM urls").fetchall()[:3]
-    az = datetime.datetime.now()
 
-    for product in products:
-        one_pars(product)
-    print(datetime.datetime.now() - az)
+    cur.execute("SELECT * FROM urls")
+    products = cur.fetchall()[:3]
+    pool = ThreadPool(4)
+
+    results = pool.map(one_pars, products)
+    pool.close()
+    pool.join()
+    # one_pars(products[0])
 
 
 def one_pars(product):
-    keys = cur.execute("SELECT * FROM shops WHERE name = ?", (product[1],)).fetchall()[0]
+    cur.execute("SELECT * FROM shops WHERE name = %s", (product[1],))
+    keys = cur.fetchall()
+    print(keys)
     price = wb(parser(product[3]), keys[2], keys[3])
-    cur.execute(f'Update urls set last_price = ? where id = ?', (price, product[0]))
-    con.commit()
+    cur.execute(f'Update urls set last_prices = %s where id = %s', (price, product[0]))
 
 
 if __name__ == '__main__':
     all_pars()
+    conn.close()
 
 
 

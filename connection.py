@@ -1,5 +1,16 @@
-import sqlite3
+import psycopg2
 
 
-con = sqlite3.connect('base.db')
-cur = con.cursor()
+try:
+    conn = psycopg2.connect(host="localhost",
+                            database="ytvideo",
+                            user="postgres",
+                            password="postgres",
+                            port="5438")
+    cur = conn.cursor()
+    conn.autocommit = True
+
+
+except Exception as ex:
+    print(ex)
+    exit(0)
