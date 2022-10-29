@@ -1,63 +1,12 @@
 import sys
-import validators
 from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, \
-    QMainWindow, QDialog, QHeaderView, QTableWidgetItem, QPushButton, QMessageBox
+    QMainWindow, QDialog, QHeaderView, QTableWidgetItem, QPushButton, QMessageBox, QTabWidget, QWidget, QLabel
 from PyQt5 import uic
 from connection import conn, cur
 from par import one_pars
-
-
-class RegisterPage(QDialog):
-    def __init__(self):
-        self.flag = False
-        super(RegisterPage, self).__init__()
-        uic.loadUi('add_product.ui', self)
-        cur.execute("SELECT * FROM shops")
-        names = [i[1] for i in cur.fetchall()]
-        self.comboBox.addItems(names)
-        self.pushButton.clicked.connect(self.run)
-        self.pushButton_2.clicked.connect(self.close_win)
-
-    def close_win(self):
-        self.close()
-
-    def run(self):
-        name = self.lineEdit.text()
-        url = self.lineEdit_2.text()
-        shop = self.comboBox.currentText()
-        if not name:
-            self.label_3.setText("Не указано имя")
-        elif not url:
-            self.label_3.setText("Не указана ссылка")
-        elif not validators.url(url):
-            self.label_3.setText("Неверная ссылка")
-        else:
-            cur.execute('SELECT * FROM urls WHERE url = %s', (url,))
-            last_product = cur.fetchall()
-            if not last_product:
-                cur.execute("INSERT INTO urls (shop, name, url, last_prices, prices) VALUES (%s, %s, %s, %s, %s)",
-                            (shop, name, url, 0, 0))
-                self.flag = True
-                self.close()
-            else:
-                self.label_3.setText("Такой товар уже существует")
-
-
-class ProfilePage(QDialog):
-    def __init__(self):
-        super(ProfilePage, self).__init__()
-        uic.loadUi('main_profil.ui', self)
-        self.toolButton.clicked.connect(self.help)
-
-    def help(self):
-        dlg = QMessageBox(self)
-        dlg.setWindowTitle("Help!")
-        with open("help.txt", 'rt', encoding="UTF-8") as file:
-            message = file.read()
-        dlg.setText(message)
-        button = dlg.exec()
+from clasiss import *
 
 
 class MyWidget(QMainWindow):
@@ -66,10 +15,12 @@ class MyWidget(QMainWindow):
         uic.loadUi('main_window.ui', self)
         self.pushButton.clicked.connect(self.add)
         self.pushButton_2.clicked.connect(self.profile)
+        self.pushButton_3.clicked.connect(self.shops)
+        self.pushButton_4.clicked.connect(self.category)
         self.load_date()
 
     def add(self):
-        register_page = RegisterPage()
+        register_page = RegisterPage.RegisterPage()
         register_page.exec_()
         if register_page.flag:
             self.load_date()
@@ -78,8 +29,18 @@ class MyWidget(QMainWindow):
             self.load_date()
 
     def profile(self):
-        register_page = ProfilePage()
+        register_page = Profile.ProfilePage()
         register_page.exec_()
+
+    def category(self):
+        register_page = AddCategory.AddCategory()
+        register_page.exec_()
+        if register_page.flag:
+            self.update_tabs(True)
+
+    def shops(self):
+        register_shop = Shops.Shops()
+        register_shop.exec_()
 
     def load_date(self):
         cur.execute("SELECT * FROM urls")
@@ -117,7 +78,27 @@ class MyWidget(QMainWindow):
 
         header = self.tableWidget.horizontalHeader()
         header.setSectionResizeMode(2, QHeaderView.Stretch)
+        self.tabWidget.currentChanged.connect(self.TabChange)
+        self.tabWidget.setMovable(True)
+        self.update_tabs()
+
         # self.tableWidget.itemChanged.connect(self.main)
+
+    def update_tabs(self, flag=False):
+        if flag:
+            cur.execute("SELECT * FROM Tabs ORDER BY id DESC LIMIT 1")
+        else:
+            cur.execute("SELECT * FROM Tabs")
+        tabs = cur.fetchall()
+        for tab in tabs:
+            tab1 = QWidget()
+            tab1.setObjectName(str(tab[0]))
+            self.tabWidget.addTab(tab1, tab[1])
+
+    def TabChange(self, event):
+        az = self.tabWidget.tabText(event)
+        print(event)
+        print(az)
 
     def del_product(self):
         az = self.sender().objectName()

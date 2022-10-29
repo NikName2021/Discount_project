@@ -11,8 +11,14 @@ CREATE TABLE Urls
 
 CREATE TABLE Shops
 (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     key VARCHAR(255),
     type_key VARCHAR(255)
+);
+
+CREATE TABLE Tabs
+(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
 );
