@@ -46,16 +46,21 @@ def wb(html, key, key_class):
         print(error)
 
 
-def download_image(page, id_product):
+def download_image(page, id_product, key, name_key):
     try:
-        image = page.find('img', class_='photo-zoom__preview j-zoom-image hide')['src']
+        image = page.find(key, class_=name_key)['src']
+
         p = requests.get(f"https:{image}")
-        with open(f"images/{id_product}.jpg", "wb") as f:
+        with open(f"images/{id_product}_avg.jpg", "wb") as f:
             f.write(p.content)
 
-        img = Image.open(f"images/{id_product}.jpg")
+        img = Image.open(f"images/{id_product}_avg.jpg")
         img.thumbnail(size=(100, 100))
         img.save(f"images/{id_product}_min.jpg")
+
+        img = Image.open(f"images/{id_product}_avg.jpg")
+        img.thumbnail(size=(300, 300))
+        img.save(f"images/{id_product}_avg.jpg")
         return 1
 
     except Exception as ex:
@@ -68,8 +73,8 @@ def one_pars(product):
     page = parser(product[3])
     price = wb(page, keys[2], keys[3])
     cur.execute(f'Update urls set last_prices = %s where id = %s', (price, product[0]))
-    if not product[7]:
-        statys = download_image(page, product[0])
+    if not product[7] and keys[4]:
+        statys = download_image(page, product[0], keys[4], keys[5])
         cur.execute(f'Update urls set image = %s where id = %s', (statys, product[0]))
 
 
@@ -79,10 +84,12 @@ def all_pars():
     products = cur.fetchall()
     for product in products:
         one_pars(product)
-        return
 
 
 if __name__ == '__main__':
+    # az = parser('https://www.mvideo.ru/products/smartfon-apple-iphone-14-plus-512gb-blue-esim-30064929')
+    # with open('mv.txt', 'wt', encoding='UTF-8') as f:
+    #     f.write(az)
     all_pars()
     conn.close()
 
