@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QDialog, QMessageBox
 class ProfilePage(QDialog):
     def __init__(self):
         super(ProfilePage, self).__init__()
-        uic.loadUi('main_profil.ui', self)
+        uic.loadUi('blade/main_profil.ui', self)
         self.toolButton.clicked.connect(self.help)
 
     def help(self):

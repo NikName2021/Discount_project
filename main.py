@@ -7,13 +7,14 @@ from PyQt5.QtWidgets import QApplication, \
 from PyQt5 import uic
 from connection import conn, cur
 from par import one_pars
-from clasiss import *
+from Pages import *
 
 
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('main_window.ui', self)
+        uic.loadUi('blade/main_window.ui', self)
+        self.setWindowTitle('SaleHunter')
         self.pushButton.clicked.connect(self.add)
         self.pushButton_2.clicked.connect(self.profile)
         self.pushButton_3.clicked.connect(self.shops)
@@ -57,7 +58,7 @@ class MyWidget(QMainWindow):
         register_shop.exec_()
 
     def main_load_date(self):
-        cur.execute("SELECT * FROM urls")
+        cur.execute("SELECT * FROM urls order by id")
         products = cur.fetchall()
         self.update_table(self.tableWidget, products)
 

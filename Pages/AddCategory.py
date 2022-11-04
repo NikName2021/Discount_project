@@ -7,7 +7,7 @@ class AddCategory(QDialog):
     def __init__(self):
         self.flag = False
         super(AddCategory, self).__init__()
-        uic.loadUi('add_category.ui', self)
+        uic.loadUi('blade/add_category.ui', self)
         self.check_len()
         self.pushButton_2.clicked.connect(self.run)
         self.pushButton.clicked.connect(self.close_win)

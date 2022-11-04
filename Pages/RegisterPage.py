@@ -8,9 +8,8 @@ class RegisterPage(QDialog):
     def __init__(self, now_tab):
         self.flag = False
         self.now_tab = now_tab
-        print(self.now_tab)
         super(RegisterPage, self).__init__()
-        uic.loadUi('add_product.ui', self)
+        uic.loadUi('blade/add_product.ui', self)
         cur.execute("SELECT * FROM shops")
         names = [i[1] for i in cur.fetchall()]
         self.comboBox.addItems(names)
