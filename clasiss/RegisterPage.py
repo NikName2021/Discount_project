@@ -1,12 +1,14 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QDialog
 import validators
-from connection import conn, cur
+from connection import cur
 
 
 class RegisterPage(QDialog):
-    def __init__(self):
+    def __init__(self, now_tab):
         self.flag = False
+        self.now_tab = now_tab
+        print(self.now_tab)
         super(RegisterPage, self).__init__()
         uic.loadUi('add_product.ui', self)
         cur.execute("SELECT * FROM shops")
@@ -32,8 +34,9 @@ class RegisterPage(QDialog):
             cur.execute('SELECT * FROM urls WHERE url = %s', (url,))
             last_product = cur.fetchall()
             if not last_product:
-                cur.execute("INSERT INTO urls (shop, name, url, last_prices, prices) VALUES (%s, %s, %s, %s, %s)",
-                            (shop, name, url, 0, 0))
+                cur.execute(
+                    "INSERT INTO urls (shop, name, url, last_prices, prices, category) VALUES (%s, %s, %s, %s, %s, %s)",
+                    (shop, name, url, 0, 0, self.now_tab))
                 self.flag = True
                 self.close()
             else:

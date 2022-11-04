@@ -72,9 +72,9 @@ border: 1px solid #186ae5;
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>20</x>
       <y>110</y>
-      <width>1051</width>
+      <width>1081</width>
       <height>671</height>
      </rect>
     </property>
@@ -101,8 +101,8 @@ border: 1px solid #186ae5;
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>1</y>
-        <width>1041</width>
+        <y>0</y>
+        <width>1081</width>
         <height>641</height>
        </rect>
       </property>

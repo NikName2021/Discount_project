@@ -1,7 +1,41 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QDialog, QTableWidgetItem, QHeaderView
+from PyQt5.QtWidgets import QDialog, QTableWidgetItem, QHeaderView, QPushButton
 import validators
 from connection import conn, cur
+
+
+class Add_shop(QDialog):
+    def __init__(self):
+        super(Add_shop, self).__init__()
+        uic.loadUi('add_shop.ui', self)
+        self.pushButton.clicked.connect(self.run)
+        self.pushButton_2.clicked.connect(self.close_win)
+        self.flag = False
+
+    def close_win(self):
+        self.close()
+
+    def run(self):
+        name_shop = self.lineEdit.text()
+        type_class = self.lineEdit_2.text()
+        name_class = self.lineEdit_3.text()
+        if not name_shop:
+            self.label_4.setText("Не указано имя")
+        elif not type_class:
+            self.label_4.setText("Не указан тип")
+        elif not name_class:
+            self.label_4.setText("Не указано название класса")
+
+        else:
+            cur.execute('SELECT * FROM shops WHERE name = %s', (name_shop,))
+            last_product = cur.fetchall()
+            if not last_product:
+                cur.execute("INSERT INTO shops (name, key, type_key) VALUES (%s, %s, %s)",
+                            (name_shop, name_class, type_class))
+                self.flag = True
+                self.close()
+            else:
+                self.label_4.setText("Такой магазин уже существует")
 
 
 class Shops(QDialog):
@@ -9,14 +43,16 @@ class Shops(QDialog):
         self.flag = False
         super(Shops, self).__init__()
         uic.loadUi('shops.ui', self)
-        cur.execute("SELECT * FROM shops")
-        shops = cur.fetchall()
+        self.load_date(self.load_shop())
         self.pushButton.clicked.connect(self.run)
-        self.load_date(shops)
+
+    def load_shop(self):
+        cur.execute("SELECT * FROM shops")
+        return cur.fetchall()
 
     def load_date(self, shops):
 
-        title = ["Магазин", "Название класса", "Тип"]
+        title = ["Магазин", "Название класса", "Тип", "Удалить"]
         self.tableWidget.setColumnCount(len(title))
         self.tableWidget.setHorizontalHeaderLabels(title)
         self.tableWidget.setRowCount(len(shops))
@@ -27,36 +63,21 @@ class Shops(QDialog):
             self.tableWidget.setItem(row, 1, QTableWidgetItem(shop[2]))
             self.tableWidget.setItem(row, 2, QTableWidgetItem(shop[3]))
 
-
-            # btn_del = QPushButton("Удалить")
-            # btn_del.setObjectName(str(person[0]))
-            # btn_del.clicked.connect(self.del_product)
-            # self.tableWidget.setCellWidget(row, 5, btn_del)
+            btn_del = QPushButton("Удалить")
+            btn_del.setObjectName(str(shop[0]))
+            btn_del.clicked.connect(self.del_product)
+            self.tableWidget.setCellWidget(row, 3, btn_del)
 
             row += 1
 
         header = self.tableWidget.horizontalHeader()
         header.setSectionResizeMode(1, QHeaderView.Stretch)
-        # self.tableWidget.itemChanged.connect(self.main)
 
+    def del_product(self):
+        pass
 
     def run(self):
-        name = self.lineEdit.text()
-        url = self.lineEdit_2.text()
-        shop = self.comboBox.currentText()
-        if not name:
-            self.label_3.setText("Не указано имя")
-        elif not url:
-            self.label_3.setText("Не указана ссылка")
-        elif not validators.url(url):
-            self.label_3.setText("Неверная ссылка")
-        else:
-            cur.execute('SELECT * FROM urls WHERE url = %s', (url,))
-            last_product = cur.fetchall()
-            if not last_product:
-                cur.execute("INSERT INTO urls (shop, name, url, last_prices, prices) VALUES (%s, %s, %s, %s, %s)",
-                            (shop, name, url, 0, 0))
-                self.flag = True
-                self.close()
-            else:
-                self.label_3.setText("Такой товар уже существует")
+        register_page = Add_shop()
+        register_page.exec_()
+        if register_page.flag:
+            self.load_date(self.load_shop())

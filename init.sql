@@ -1,11 +1,12 @@
 CREATE TABLE Urls
 (
-    id serial PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     shop VARCHAR(255),
     name VARCHAR(255),
     url VARCHAR(1000),
     last_prices REAL,
-    prices REAL
+    prices REAL,
+    category INT
 
 );
 

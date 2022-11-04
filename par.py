@@ -47,18 +47,20 @@ def wb(html, key, key_class):
 def all_pars():
 
     cur.execute("SELECT * FROM urls")
-    products = cur.fetchall()[:3]
-    pool = ThreadPool(4)
-
-    results = pool.map(one_pars, products)
-    pool.close()
-    pool.join()
+    products = cur.fetchall()
+    # pool = ThreadPool(4)
+    #
+    # results = pool.map(one_pars, products)
+    # pool.close()
+    # pool.join()
     # one_pars(products[0])
+    for product in products:
+        one_pars(product)
 
 
 def one_pars(product):
     cur.execute("SELECT * FROM shops WHERE name = %s", (product[1],))
-    keys = cur.fetchall()
+    keys = cur.fetchall()[0]
     print(keys)
     price = wb(parser(product[3]), keys[2], keys[3])
     cur.execute(f'Update urls set last_prices = %s where id = %s', (price, product[0]))

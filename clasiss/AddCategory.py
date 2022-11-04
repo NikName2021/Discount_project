@@ -35,17 +35,3 @@ class AddCategory(QDialog):
                 self.close()
             else:
                 self.label_2.setText("Такая категория существует")
-
-        # elif not url:
-        #     self.label_3.setText("Не указана ссылка")
-        #
-        # else:
-        #     cur.execute('SELECT * FROM urls WHERE url = %s', (url,))
-        #     last_product = cur.fetchall()
-        #     if not last_product:
-        #         cur.execute("INSERT INTO urls (shop, name, url, last_prices, prices) VALUES (%s, %s, %s, %s, %s)",
-        #                     (shop, name, url, 0, 0))
-        #         self.flag = True
-        #         self.close()
-        #     else:
-        #         self.label_3.setText("Такой товар уже существует")
