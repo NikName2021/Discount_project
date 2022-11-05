@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>582</width>
-    <height>335</height>
+    <width>645</width>
+    <height>391</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,8 +62,8 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>260</y>
+     <x>370</x>
+     <y>310</y>
      <width>251</width>
      <height>71</height>
     </rect>
@@ -124,6 +124,42 @@
    </property>
    <property name="text">
     <string>Магазин</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>44</x>
+     <y>240</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Характеристика</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>330</y>
+     <width>231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Обновить сейчас (20 с)</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>230</y>
+     <width>361</width>
+     <height>51</height>
+    </rect>
    </property>
   </widget>
  </widget>

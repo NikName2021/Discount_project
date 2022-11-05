@@ -4,11 +4,11 @@ import validators
 from connection import cur
 
 
-class RegisterPage(QDialog):
+class NewProduct(QDialog):
     def __init__(self, now_tab):
         self.flag = False
         self.now_tab = now_tab
-        super(RegisterPage, self).__init__()
+        super(NewProduct, self).__init__()
         uic.loadUi('blade/add_product.ui', self)
         cur.execute("SELECT * FROM shops")
         names = [i[1] for i in cur.fetchall()]
@@ -23,6 +23,8 @@ class RegisterPage(QDialog):
         name = self.lineEdit.text()
         url = self.lineEdit_2.text()
         shop = self.comboBox.currentText()
+        character = "; ".join(self.textEdit.toPlainText().split('\n'))
+
         if not name:
             self.label_3.setText("Не указано имя")
         elif not url:
@@ -34,9 +36,10 @@ class RegisterPage(QDialog):
             last_product = cur.fetchall()
             if not last_product:
                 cur.execute(
-                    "INSERT INTO urls (shop, name, url, last_prices, prices, category) VALUES (%s, %s, %s, %s, %s, %s)",
-                    (shop, name, url, 0, 0, self.now_tab))
-                self.flag = True
+                    "INSERT INTO urls (shop, name, url, last_prices, prices, category, character) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                    (shop, name, url, 0, 0, self.now_tab, character))
+                if self.checkBox.isChecked():
+                    self.flag = True
                 self.close()
             else:
                 self.label_3.setText("Такой товар уже существует")

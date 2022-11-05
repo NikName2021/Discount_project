@@ -7,7 +7,8 @@ CREATE TABLE Urls
     last_prices REAL,
     prices REAL,
     category INT,
-    image INT
+    image INT,
+    character VARCHAR
 
 );
 

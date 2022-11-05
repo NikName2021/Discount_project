@@ -27,6 +27,8 @@ def parser(url):
         driver.get(url)
         time.sleep(5)
         html = driver.page_source
+        # with open('11.txt', "wt", encoding='UTF-8') as f:
+        #     f.write(html)
         soup = BeautifulSoup(html, "lxml")
         return soup
 
@@ -80,7 +82,7 @@ def one_pars(product):
 
 def all_pars():
 
-    cur.execute("SELECT * FROM urls")
+    cur.execute("SELECT * FROM urls ORDER BY id")
     products = cur.fetchall()
     for product in products:
         one_pars(product)

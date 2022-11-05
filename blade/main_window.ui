@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1139</width>
-    <height>849</height>
+    <width>1165</width>
+    <height>904</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,18 @@
 
 </string>
   </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextOnly</enum>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>20</y>
+      <x>610</x>
+      <y>30</y>
       <width>271</width>
       <height>51</height>
      </rect>
@@ -45,16 +51,26 @@ border: 2px solid rgb(182, 200, 198);
 </string>
     </property>
     <property name="text">
-     <string>Добавить товар</string>
+     <string>  Добавить товар</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../config/basket3.png</normaloff>../config/basket3.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>42</width>
+      <height>42</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>101</width>
-      <height>81</height>
+      <x>50</x>
+      <y>30</y>
+      <width>191</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -69,15 +85,40 @@ border-radius: 10px;
 border: 2px solid rgb(182, 200, 198);</string>
     </property>
     <property name="text">
-     <string>Профиль</string>
+     <string> Профиль</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../config/profile.jpg</normaloff>../config/profile.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="shortcut">
+     <string notr="true"/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeatDelay">
+     <number>300</number>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>100</number>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>20</y>
-      <width>151</width>
+      <x>310</x>
+      <y>30</y>
+      <width>221</width>
       <height>51</height>
      </rect>
     </property>
@@ -95,17 +136,33 @@ border-radius: 10px;
 border: 2px solid rgb(182, 200, 198);</string>
     </property>
     <property name="text">
-     <string>Магазины</string>
+     <string>  Магазины</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../config/shops.png</normaloff>../config/shops.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
     </property>
    </widget>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>110</y>
+      <x>40</x>
+      <y>120</y>
       <width>1081</width>
       <height>671</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="tabPosition">
      <enum>QTabWidget::North</enum>
@@ -132,11 +189,16 @@ border: 2px solid rgb(182, 200, 198);</string>
         <x>0</x>
         <y>0</y>
         <width>1081</width>
-        <height>641</height>
+        <height>651</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(242, 249, 255);
+       <string notr="true">background-color: rgb(251, 253, 255);
 </string>
       </property>
      </widget>
@@ -145,15 +207,16 @@ border: 2px solid rgb(182, 200, 198);</string>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>900</x>
-      <y>100</y>
+      <x>40</x>
+      <y>820</y>
       <width>201</width>
-      <height>28</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Segoe Print</family>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -165,19 +228,45 @@ border: 2px solid rgb(182, 200, 198);</string>
      <string>Добавить категорию</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>820</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(224, 246, 244);
+border-radius: 6px;
+border: 2px solid rgb(182, 200, 198);</string>
+    </property>
+    <property name="text">
+     <string>Удалить категорию</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1139</width>
+     <width>1165</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../config/12.qrc"/>
+ </resources>
  <connections/>
 </ui>
