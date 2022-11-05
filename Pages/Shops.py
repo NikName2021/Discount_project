@@ -32,14 +32,14 @@ class Shops(QDialog):
             self.tableWidget.setItem(row, 2, QTableWidgetItem(shop[3]))
 
             btn_del = QPushButton("")
-            btn_del.setIcon(QIcon('del1.png'))
+            btn_del.setIcon(QIcon('config/del1.png'))
             btn_del.setIconSize(QSize(20, 20))
             btn_del.setObjectName(str(shop[0]))
             btn_del.clicked.connect(self.setting)
             self.tableWidget.setCellWidget(row, 3, btn_del)
 
             btn_gr = QPushButton("")
-            btn_gr.setIcon(QIcon('setting.png'))
+            btn_gr.setIcon(QIcon('config/setting.png'))
             btn_gr.setIconSize(QSize(20, 20))
             btn_gr.setObjectName(str(shop[0]))
             btn_gr.clicked.connect(self.setting)

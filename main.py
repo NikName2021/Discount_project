@@ -5,8 +5,8 @@ from PyQt5.QtWidgets import QApplication, \
     QMainWindow, QHeaderView, QTableWidgetItem, QPushButton, QLabel, \
     QTableWidget
 from PyQt5 import uic
+
 from connection import conn, cur
-from par import one_pars
 from Pages import *
 from Button import *
 
@@ -16,6 +16,11 @@ class MyWidget(QMainWindow):
         super().__init__()
         uic.loadUi('blade/main_window.ui', self)
         self.setWindowTitle('SaleHunter')
+        self.TABLE_STYLE = """
+                     background-color: rgb(251, 253, 255);
+                     font: 10pt "Segoe UI";
+                 """
+
         self.pushButton.clicked.connect(self.add)
         self.pushButton_2.clicked.connect(self.profile)
         self.pushButton_3.clicked.connect(self.shops)
@@ -35,7 +40,6 @@ class MyWidget(QMainWindow):
         self.image = QLabel(self)
         self.image.move(10, 10)
         self.image.resize(10, 10)
-        # Отображаем содержимое QPixmap в объекте QLabel
         self.image.setPixmap(self.pixmap)
 
     def update_tab(self):
@@ -49,11 +53,12 @@ class MyWidget(QMainWindow):
 
         register_page = NewProduct.NewProduct(now_tab)
         register_page.exec_()
+        self.tabChange()
         if register_page.flag:
-            self.tabChange()
             cur.execute('SELECT * FROM urls ORDER BY id DESC LIMIT 1')
-            one_pars(cur.fetchone())
-            self.main_load_date()
+            load_page = LoadWindow.LoadWindow(cur.fetchone())
+            load_page.exec_()
+            self.tabChange()
 
     def profile(self):
         register_page = Profile.ProfilePage()
@@ -78,6 +83,7 @@ class MyWidget(QMainWindow):
     def update_table(self, table, products: list):
 
         title = ["Магазин", "Название", "Характеристика", "Цена, ₽", "GR", "Удалить", 'img']
+        table.setStyleSheet(self.TABLE_STYLE)
         table.setColumnCount(len(title))
         table.setHorizontalHeaderLabels(title)
         table.setRowCount(len(products))
@@ -94,13 +100,15 @@ class MyWidget(QMainWindow):
             table.setItem(row, 3, QTableWidgetItem(formatted_number))
 
             btn_gr = QPushButton("")
-            btn_gr.setIcon(QIcon('graf4.png'))
-            btn_gr.setIconSize(QSize(30, 30))
+            btn_gr.setIcon(QIcon('config/graf4.png'))
+            btn_gr.setIconSize(QSize(33, 33))
             btn_gr.setObjectName(str(product[0]))
             btn_gr.clicked.connect(self.price_chart)
             table.setCellWidget(row, 4, btn_gr)
 
-            btn_del = QPushButton("Удалить")
+            btn_del = QPushButton("")
+            btn_del.setIcon(QIcon('config/trash.jpg'))
+            btn_del.setIconSize(QSize(28, 28))
             btn_del.setObjectName(str(product[0]))
             btn_del.clicked.connect(self.confirm_del_product)
             table.setCellWidget(row, 5, btn_del)

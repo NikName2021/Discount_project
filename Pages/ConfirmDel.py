@@ -24,7 +24,7 @@ class ConfirmDel(QDialog):
         else:
             self.label_2.setText(f"""Вы уверены, что хотите удалить товар: {self.product[2]}({self.product[1]})
 
-            Все его данные будут удалены без возможности восстановления!""")
+Все его данные будут удалены без возможности восстановления!""")
 
     def run(self):
         self.flag = True
