@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtCore import QSize
+from PyQt5.QtCore import QSize, Qt
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QApplication, \
     QMainWindow, QHeaderView, QTableWidgetItem, QPushButton, QLabel, \
@@ -9,6 +9,7 @@ from PyQt5 import uic
 from connection import conn, cur
 from Pages import *
 from Button import *
+import Sale_Hunter_Bot
 
 
 class MyWidget(QMainWindow):
@@ -82,7 +83,7 @@ class MyWidget(QMainWindow):
 
     def update_table(self, table, products: list):
 
-        title = ["Магазин", "Название", "Характеристика", "Цена, ₽", "GR", "Удалить", 'img']
+        title = ["Магазин", "Название", "Характеристика", "Цена, ₽", "GR", "Удалить", 'Img']
         table.setStyleSheet(self.TABLE_STYLE)
         table.setColumnCount(len(title))
         table.setHorizontalHeaderLabels(title)
@@ -178,8 +179,9 @@ class MyWidget(QMainWindow):
             self.update_tabs()
 
     def price_chart(self):
-        # az = self.sender().objectName()
-        print(555)
+        az = self.sender().objectName()
+        register_page = GrafOfPrice.GrafOfPrice(az)
+        register_page.exec_()
 
     def closeEvent(self, event):
         conn.close()

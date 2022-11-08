@@ -27,3 +27,11 @@ CREATE TABLE Tabs
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)
 );
+
+CREATE TABLE Prices
+(
+    id SERIAL PRIMARY KEY,
+    id_product INTEGER REFERENCES Urls (id) ON DELETE CASCADE,
+    price REAL,
+    timestamp timestamp default current_timestamp
+);

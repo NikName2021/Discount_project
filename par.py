@@ -2,9 +2,7 @@ import time
 
 import requests
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
 import undetected_chromedriver
-from multiprocessing.dummy import Pool as ThreadPool
 import datetime
 from PIL import Image
 from connection import cur, conn
@@ -17,7 +15,7 @@ def parser(url):
     # options.add_argument("--disable-blink-features=AutomationControlled")
 
     options = undetected_chromedriver.ChromeOptions()
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     driver = undetected_chromedriver.Chrome(
         executable_path="config/chromedriver",
         options=options
@@ -46,6 +44,7 @@ def wb(html, key, key_class):
         return prise
     except Exception as error:
         print(error)
+        return 0
 
 
 def download_image(page, id_product, key, name_key):
@@ -75,6 +74,7 @@ def one_pars(product):
     page = parser(product[3])
     price = wb(page, keys[2], keys[3])
     cur.execute(f'Update urls set last_prices = %s where id = %s', (price, product[0]))
+    cur.execute(f'INSERT INTO prices (id_product, price) VALUES (%s, %s)', (product[0], price))
     if not product[7] and keys[4]:
         statys = download_image(page, product[0], keys[4], keys[5])
         cur.execute(f'Update urls set image = %s where id = %s', (statys, product[0]))
@@ -94,18 +94,3 @@ if __name__ == '__main__':
     #     f.write(az)
     all_pars()
     conn.close()
-
-
-
-
-#     pool = ThreadPool(4)
-#
-#     # Open the URLs in their own threads
-#     # and return the results
-#     results = pool.map(one_pars, products)
-#
-#     # Close the pool and wait for the work to finish
-#     pool.close()
-#     pool.join()
-#     # for product in products:
-#     #     one_pars(product)
