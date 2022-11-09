@@ -150,11 +150,13 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
         az = self.tabWidget.tabText(event)
         if az != "Главная":
             self.pushButton_5.setVisible(True)
+            # появление кнопки для удаления категории
             try:
                 tab_id = self.tabs[event - 1][1]
                 table = self.tabs[event - 1][0]
                 cur.execute("SELECT * FROM urls WHERE category = %s order by id", (tab_id,))
                 products = cur.fetchall()
+                # загрузка данных в нужную таблицу
                 self.update_table(table, products)
             except IndexError:
                 pass
@@ -165,8 +167,10 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
 
     def update_tabs(self, flag=False):
         if flag:
+            # добавление одного tab
             self.tabWidget.addTab(self.tabs[-1][0], self.tabs[-1][2])
         else:
+            # добавление всех
             for tab in self.tabs:
                 self.tabWidget.addTab(tab[0], tab[2])
 
@@ -174,12 +178,14 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
         az = self.sender().objectName()
         cur.execute(f"SELECT * from urls where id = %s", (int(az),))
         product = cur.fetchone()
-        register_page = ConfirmDel.ConfirmDel(product)
-        register_page.exec_()
-        if register_page.flag:
+        # окно подтверждения удаления продукта
+        conf_del = ConfirmDel.ConfirmDel(product)
+        conf_del.exec_()
+        if conf_del.flag:
             self.del_product(product[0])
 
     def del_product(self, id_product):
+        # удаление продукта
         cur.execute(f"DELETE from urls where id = %s", (id_product,))
         self.tabChange()
 
@@ -187,12 +193,16 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
         event = self.tabWidget.currentIndex()
         name = self.tabWidget.tabText(event)
         tab_id = self.tabs[event - 1][1]
+        # окно подтверждения удаления категории
         confirm_del = ConfirmDel.ConfirmDel(name, about=True)
         confirm_del.exec_()
         if confirm_del.flag:
             cur.execute(f'Update urls set category = %s where category = %s', (0, tab_id))
+            # переход всех товаров на главную
             cur.execute(f"DELETE from tabs where id = %s", (tab_id,))
+            # удаление категории
             self.tabWidget.clear()
+            # очистка всех категорий из окна и новая инициализация их
             self.tabWidget.addTab(self.tableWidget, "Главная")
             self.update_tab()
             self.update_tabs()
@@ -200,8 +210,8 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
     def price_chart(self):
         # построение графика цены для товара
         az = self.sender().objectName()
-        register_page = GrafOfPrice.GrafOfPrice(az)
-        register_page.exec_()
+        graf_page = GrafOfPrice.GrafOfPrice(az)
+        graf_page.exec_()
 
     def closeEvent(self, event):
         conn.close()

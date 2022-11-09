@@ -9,7 +9,7 @@ def scheduler():
     Функция - таймер
     """
     schedule.every(1).hour.do(all_pars)
-    # каждые 10 минут запускаем фунцию "all_pars"
+    # каждые час запускаем фунцию "all_pars"
     while True:
         schedule.run_pending()
 
