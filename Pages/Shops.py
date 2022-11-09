@@ -33,6 +33,7 @@ class Shops(QDialog, shops.Ui_Dialog):
         row = 0
 
         for shop in shops:
+
             self.tableWidget.setItem(row, 0, QTableWidgetItem(shop[1]))
             self.tableWidget.setItem(row, 1, QTableWidgetItem(shop[2]))
             self.tableWidget.setItem(row, 2, QTableWidgetItem(shop[3]))

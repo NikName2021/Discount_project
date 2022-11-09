@@ -106,8 +106,12 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
         row = 0
 
         for product in products:
+
             table.setItem(row, 0, QTableWidgetItem(product[1]))
-            table.setItem(row, 1, QTableWidgetItem(product[2]))
+            url = QLabel(f'<a style="color: rgb(0, 0, 0); text-decoration: none;" href={product[3]}>{product[2]}</a>',
+                         openExternalLinks=True)
+            table.setCellWidget(row, 1, url)
+
             table.setItem(row, 2, QTableWidgetItem(product[8]))
             if not product[4] is None:
                 formatted_number = f'{product[4]:,}'.replace(',', ' ')
