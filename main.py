@@ -43,10 +43,14 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
         self.image.resize(10, 10)
         self.image.setPixmap(self.pixmap)
 
-    def update_tab(self):
+    def update_tab(self, flag=False):
         # загрузка категорий
         cur.execute("SELECT * FROM Tabs")
-        self.tabs = [(QTableWidget(self), i[0], i[1]) for i in cur.fetchall()]
+        if flag:
+            tab = cur.fetchall()[-1]
+            self.tabs.append((QTableWidget(self), tab[0], tab[1]))
+        else:
+            self.tabs = [(QTableWidget(self), i[0], i[1]) for i in cur.fetchall()]
 
     def add(self):
         # добавление нового товара
@@ -77,7 +81,7 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
         new_category.exec_()
         if new_category.flag:
             # обновление списка с категориями и таблицами
-            self.update_tab()
+            self.update_tab(True)
             self.update_tabs(True)
 
     def shops(self):
@@ -146,12 +150,15 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
         az = self.tabWidget.tabText(event)
         if az != "Главная":
             self.pushButton_5.setVisible(True)
-            tab_id = self.tabs[event - 1][1]
-            table = self.tabs[event - 1][0]
+            try:
+                tab_id = self.tabs[event - 1][1]
+                table = self.tabs[event - 1][0]
+                cur.execute("SELECT * FROM urls WHERE category = %s order by id", (tab_id,))
+                products = cur.fetchall()
+                self.update_table(table, products)
+            except IndexError:
+                pass
 
-            cur.execute("SELECT * FROM urls WHERE category = %s order by id", (tab_id,))
-            products = cur.fetchall()
-            self.update_table(table, products)
         else:
             self.pushButton_5.setVisible(False)
             self.main_load_date()
