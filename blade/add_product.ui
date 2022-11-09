@@ -6,18 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>645</width>
-    <height>391</height>
+    <width>646</width>
+    <height>486</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>110</y>
+     <x>200</x>
+     <y>150</y>
      <width>351</width>
      <height>31</height>
     </rect>
@@ -26,8 +29,8 @@
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>170</y>
+     <x>200</x>
+     <y>210</y>
      <width>351</width>
      <height>31</height>
     </rect>
@@ -36,11 +39,14 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>110</y>
-     <width>71</width>
+     <x>60</x>
+     <y>160</y>
+     <width>101</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe Print&quot;;</string>
    </property>
    <property name="text">
     <string>Название</string>
@@ -49,11 +55,15 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>180</y>
-     <width>55</width>
-     <height>16</height>
+     <x>60</x>
+     <y>220</y>
+     <width>91</width>
+     <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe Print&quot;;
+</string>
    </property>
    <property name="text">
     <string>Ссылка</string>
@@ -62,8 +72,8 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>310</y>
+     <x>380</x>
+     <y>400</y>
      <width>251</width>
      <height>71</height>
     </rect>
@@ -71,6 +81,9 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Segoe Print&quot;;</string>
+      </property>
       <property name="text">
        <string>Ок</string>
       </property>
@@ -78,6 +91,9 @@
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_2">
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Segoe Print&quot;;</string>
+      </property>
       <property name="text">
        <string>Отмена</string>
       </property>
@@ -88,16 +104,23 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>280</y>
-     <width>281</width>
+     <x>40</x>
+     <y>370</y>
+     <width>291</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <family>Segoe Print</family>
+     <pointsize>9</pointsize>
+     <weight>9</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 9pt &quot;Segoe Print&quot;;</string>
    </property>
    <property name="text">
     <string/>
@@ -106,21 +129,32 @@
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>50</y>
-     <width>331</width>
+     <x>200</x>
+     <y>90</y>
+     <width>351</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>60</y>
-     <width>55</width>
-     <height>16</height>
+     <x>60</x>
+     <y>100</y>
+     <width>101</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe Print</family>
+     <pointsize>11</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Магазин</string>
@@ -129,11 +163,15 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>44</x>
-     <y>240</y>
-     <width>101</width>
-     <height>20</height>
+     <x>20</x>
+     <y>300</y>
+     <width>161</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Segoe Print&quot;;
+</string>
    </property>
    <property name="text">
     <string>Характеристика</string>
@@ -142,11 +180,14 @@
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>330</y>
+     <x>30</x>
+     <y>430</y>
      <width>231</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 9pt &quot;Segoe Print&quot;;</string>
    </property>
    <property name="text">
     <string>Обновить сейчас (20 с)</string>
@@ -155,11 +196,45 @@
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>230</y>
-     <width>361</width>
-     <height>51</height>
+     <x>200</x>
+     <y>280</y>
+     <width>371</width>
+     <height>71</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>30</y>
+     <width>351</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>40</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe Print</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Категория</string>
    </property>
   </widget>
  </widget>

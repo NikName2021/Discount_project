@@ -1,16 +1,21 @@
-from PyQt5 import uic
 from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QDialog, QTableWidgetItem, QHeaderView, QPushButton
 
+from . import ConfirmDel
+from . import AddShop
+from . import SettingPhoto
 from connection import conn, cur
+from PyBlades import shops
 
 
-class Shops(QDialog):
+class Shops(QDialog, shops.Ui_Dialog):
+    """Класс диалогового окна для просмотра магазинов и добавления новых"""
     def __init__(self):
         self.flag = False
         super(Shops, self).__init__()
-        uic.loadUi('blade/shops.ui', self)
+        self.setupUi(self)
+        self.setWindowTitle('Shops')
         self.load_date(self.load_shop())
         self.pushButton.clicked.connect(self.run)
 
@@ -31,11 +36,12 @@ class Shops(QDialog):
             self.tableWidget.setItem(row, 1, QTableWidgetItem(shop[2]))
             self.tableWidget.setItem(row, 2, QTableWidgetItem(shop[3]))
 
+            # добавление функциональных кнопок в таблицу
             btn_del = QPushButton("")
             btn_del.setIcon(QIcon('config/del1.png'))
             btn_del.setIconSize(QSize(20, 20))
             btn_del.setObjectName(str(shop[0]))
-            btn_del.clicked.connect(self.setting)
+            btn_del.clicked.connect(self.del_product)
             self.tableWidget.setCellWidget(row, 3, btn_del)
 
             btn_gr = QPushButton("")
@@ -52,82 +58,25 @@ class Shops(QDialog):
 
     def del_product(self):
         id_shop = self.sender().objectName()
-        cur.execute(f"DELETE from shops where id = %s", (int(id_shop),))
-        self.load_date(self.load_shop())
+        cur.execute("SELECT * FROM shops where id = %s", (int(id_shop),))
+        name = cur.fetchone()
+        # открытие окна подтверждения удаления
+        confirm_del = ConfirmDel.ConfirmDel(name, about=None)
+        confirm_del.exec_()
+        if confirm_del.flag:
+            cur.execute(f"DELETE from shops where id = %s", (int(id_shop),))
+            self.load_date(self.load_shop())
 
     def setting(self):
         id_shop = self.sender().objectName()
-        register_page = SettingPhoto(id_shop)
-        register_page.exec_()
+        # открытие диалогового окна для добавления тегов для фото
+        setting_window = SettingPhoto.SettingPhoto(id_shop)
+        setting_window.exec_()
 
     def run(self):
-        register_page = AddShop()
-        register_page.exec_()
-        if register_page.flag:
+        # Открытие диалогового окна для добавления нового магазина
+        new_shop = AddShop.AddShop()
+        new_shop.exec_()
+        # если пользователь добавил магазин
+        if new_shop.flag:
             self.load_date(self.load_shop())
-
-
-class AddShop(QDialog):
-    def __init__(self):
-        super(AddShop, self).__init__()
-        uic.loadUi('blade/add_shop.ui', self)
-        self.pushButton.clicked.connect(self.run)
-        self.pushButton_2.clicked.connect(self.close_win)
-        self.flag = False
-
-    def run(self):
-        name_shop = self.lineEdit.text()
-        type_class = self.lineEdit_2.text()
-        name_class = self.lineEdit_3.text()
-        if not name_shop:
-            self.label_4.setText("Не указано имя")
-        elif not type_class:
-            self.label_4.setText("Не указан тип")
-        elif not name_class:
-            self.label_4.setText("Не указано название класса")
-
-        else:
-            cur.execute('SELECT * FROM shops WHERE name = %s', (name_shop,))
-            last_product = cur.fetchall()
-            if not last_product:
-                cur.execute("INSERT INTO shops (name, key, type_key) VALUES (%s, %s, %s)",
-                            (name_shop, name_class, type_class))
-                self.flag = True
-                self.close()
-            else:
-                self.label_4.setText("Такой магазин уже существует")
-
-    def close_win(self):
-        self.close()
-
-
-class SettingPhoto(QDialog):
-    def __init__(self, id_shop):
-        super(SettingPhoto, self).__init__()
-        self.id_shop = int(id_shop)
-        uic.loadUi('blade/setting_photo.ui', self)
-        self.start_page()
-        self.pushButton.clicked.connect(self.run)
-        self.pushButton_2.clicked.connect(self.close_win)
-
-    def start_page(self):
-        cur.execute('SELECT * FROM shops WHERE id = %s', (self.id_shop,))
-        setting = cur.fetchone()
-        self.lineEdit.setText(setting[4])
-        self.lineEdit_2.setText(setting[5])
-
-    def run(self):
-        type_class = self.lineEdit.text()
-        name_class = self.lineEdit_2.text()
-        if not type_class:
-            self.label_4.setText("Не указан класс")
-        elif not name_class:
-            self.label_4.setText("Не указано название класса")
-
-        else:
-            cur.execute("UPDATE shops set image_key = %s, image_type_key = %s where id = %s",
-                        (type_class, name_class, self.id_shop))
-            self.close()
-
-    def close_win(self):
-        self.close()

@@ -21,7 +21,7 @@ class PushButton(QPushButton):
                 height_img = 30
 
             main = QPixmap(f'./images/{self.id_name}_avg.jpg')
-            self.window.image.move(int(x - width), height_img)
+            self.window.image.move(int(x - width) - 15, height_img)
             self.window.image.resize(width, height)
             self.window.image.setPixmap(main)
 

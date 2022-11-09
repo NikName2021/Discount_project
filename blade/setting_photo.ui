@@ -16,7 +16,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>170</x>
      <y>20</y>
      <width>281</width>
      <height>51</height>
@@ -60,6 +60,9 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe Print&quot;;</string>
+   </property>
    <property name="text">
     <string>Класс</string>
    </property>
@@ -67,11 +70,14 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>20</x>
      <y>190</y>
-     <width>101</width>
+     <width>151</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 11pt &quot;Segoe Print&quot;;</string>
    </property>
    <property name="text">
     <string>Название класса</string>
@@ -80,8 +86,8 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>270</y>
+     <x>300</x>
+     <y>280</y>
      <width>211</width>
      <height>91</height>
     </rect>
@@ -89,6 +95,11 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QPushButton" name="pushButton_2">
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Отмена</string>
       </property>
@@ -96,6 +107,11 @@
     </item>
     <item>
      <widget class="QPushButton" name="pushButton">
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Ок</string>
       </property>
@@ -107,9 +123,9 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>250</y>
-     <width>231</width>
-     <height>21</height>
+     <y>240</y>
+     <width>341</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">

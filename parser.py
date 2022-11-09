@@ -8,8 +8,7 @@ def scheduler():
     """
     Функция - таймер
     """
-    print(12)
-    schedule.every(10).minutes.do(all_pars)
+    schedule.every(1).hour.do(all_pars)
     # каждые 10 минут запускаем фунцию "all_pars"
     while True:
         schedule.run_pending()

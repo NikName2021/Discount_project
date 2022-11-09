@@ -1,12 +1,15 @@
-from PyQt5 import uic
-from PyQt5.QtWidgets import QDialog, QTableWidgetItem, QHeaderView, QPushButton
+from PyQt5.QtWidgets import QDialog
 from connection import conn, cur
 
+from PyBlades import add_shop
 
-class Add_shop(QDialog):
+
+class AddShop(QDialog, add_shop.UiAddShop):
+    """Диалоговое окно добавления магазина"""
     def __init__(self):
-        super(Add_shop, self).__init__()
-        uic.loadUi('blade/add_shop.ui', self)
+        super(AddShop, self).__init__()
+        self.setupUi(self)
+        self.setWindowTitle('NewShop')
         self.pushButton.clicked.connect(self.run)
         self.pushButton_2.clicked.connect(self.close_win)
         self.flag = False
@@ -15,6 +18,7 @@ class Add_shop(QDialog):
         name_shop = self.lineEdit.text()
         type_class = self.lineEdit_2.text()
         name_class = self.lineEdit_3.text()
+        # валидация полей
         if not name_shop:
             self.label_4.setText("Не указано имя")
         elif not type_class:

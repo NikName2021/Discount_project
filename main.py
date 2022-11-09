@@ -1,21 +1,20 @@
 import sys
-from PyQt5.QtCore import QSize, Qt
+from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QApplication, \
-    QMainWindow, QHeaderView, QTableWidgetItem, QPushButton, QLabel, \
-    QTableWidget
-from PyQt5 import uic
+    QMainWindow, QHeaderView, QTableWidgetItem, QPushButton, QLabel, QTableWidget
 
 from connection import conn, cur
 from Pages import *
 from Button import *
-import Sale_Hunter_Bot
+from PyBlades import main_window
 
 
-class MyWidget(QMainWindow):
+class MyWidget(QMainWindow, main_window.Ui_MainWindow):
+    """Главное окно приложения Sale-Hunter"""
     def __init__(self):
         super().__init__()
-        uic.loadUi('blade/main_window.ui', self)
+        self.setupUi(self)
         self.setWindowTitle('SaleHunter')
         self.TABLE_STYLE = """
                      background-color: rgb(251, 253, 255);
@@ -36,6 +35,7 @@ class MyWidget(QMainWindow):
         self.tabWidget.currentChanged.connect(self.tabChange)
 
     def initUI(self):
+        # Инициализация места для фотографии
 
         self.pixmap = QPixmap("")
         self.image = QLabel(self)
@@ -44,45 +44,54 @@ class MyWidget(QMainWindow):
         self.image.setPixmap(self.pixmap)
 
     def update_tab(self):
+        # загрузка категорий
         cur.execute("SELECT * FROM Tabs")
         self.tabs = [(QTableWidget(self), i[0], i[1]) for i in cur.fetchall()]
 
     def add(self):
+        # добавление нового товара
+        # получение id категории
         now_tab = self.tabWidget.currentIndex()
         if now_tab:
             now_tab = self.tabs[now_tab - 1][1]
 
-        register_page = NewProduct.NewProduct(now_tab)
-        register_page.exec_()
+        # окно добавления продукта
+        add_new_product = NewProduct.NewProduct(now_tab)
+        add_new_product.exec_()
         self.tabChange()
-        if register_page.flag:
+        if add_new_product.flag:
+            # загрузка данных по товару
             cur.execute('SELECT * FROM urls ORDER BY id DESC LIMIT 1')
             load_page = LoadWindow.LoadWindow(cur.fetchone())
             load_page.exec_()
             self.tabChange()
 
     def profile(self):
-        register_page = Profile.ProfilePage()
-        register_page.exec_()
+        # открытие окна с профилем
+        profile = Profile.ProfilePage()
+        profile.exec_()
 
     def category(self):
-        register_page = AddCategory.AddCategory()
-        register_page.exec_()
-        if register_page.flag:
+        # окно добавления категории
+        new_category = AddCategory.AddCategory()
+        new_category.exec_()
+        if new_category.flag:
+            # обновление списка с категориями и таблицами
             self.update_tab()
             self.update_tabs(True)
 
     def shops(self):
-        register_shop = Shops.Shops()
-        register_shop.exec_()
+        all_shops = Shops.Shops()
+        all_shops.exec_()
 
     def main_load_date(self):
+        # получение товаров для главной категории(все товары из бд)
         cur.execute("SELECT * FROM urls order by id")
         products = cur.fetchall()
         self.update_table(self.tableWidget, products)
 
-    def update_table(self, table, products: list):
-
+    def update_table(self, table, products):
+        # загрузка товаров в таблицу
         title = ["Магазин", "Название", "Характеристика", "Цена, ₽", "GR", "Удалить", 'Img']
         table.setStyleSheet(self.TABLE_STYLE)
         table.setColumnCount(len(title))
@@ -130,6 +139,7 @@ class MyWidget(QMainWindow):
         header.setSectionResizeMode(2, QHeaderView.Stretch)
 
     def tabChange(self):
+        # при переходе в другую категорию:
         event = self.tabWidget.currentIndex()
         az = self.tabWidget.tabText(event)
         if az != "Главная":
@@ -137,7 +147,7 @@ class MyWidget(QMainWindow):
             tab_id = self.tabs[event - 1][1]
             table = self.tabs[event - 1][0]
 
-            cur.execute("SELECT * FROM urls WHERE category = %s", (tab_id,))
+            cur.execute("SELECT * FROM urls WHERE category = %s order by id", (tab_id,))
             products = cur.fetchall()
             self.update_table(table, products)
         else:
@@ -168,9 +178,9 @@ class MyWidget(QMainWindow):
         event = self.tabWidget.currentIndex()
         name = self.tabWidget.tabText(event)
         tab_id = self.tabs[event - 1][1]
-        register_page = ConfirmDel.ConfirmDel(name, about=True)
-        register_page.exec_()
-        if register_page.flag:
+        confirm_del = ConfirmDel.ConfirmDel(name, about=True)
+        confirm_del.exec_()
+        if confirm_del.flag:
             cur.execute(f'Update urls set category = %s where category = %s', (0, tab_id))
             cur.execute(f"DELETE from tabs where id = %s", (tab_id,))
             self.tabWidget.clear()
@@ -179,6 +189,7 @@ class MyWidget(QMainWindow):
             self.update_tabs()
 
     def price_chart(self):
+        # построение графика цены для товара
         az = self.sender().objectName()
         register_page = GrafOfPrice.GrafOfPrice(az)
         register_page.exec_()
@@ -197,3 +208,4 @@ if __name__ == '__main__':
     ex.show()
     sys.excepthook = except_hook
     sys.exit(app.exec_())
+
