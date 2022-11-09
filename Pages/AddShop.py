@@ -30,7 +30,7 @@ class AddShop(QDialog, add_shop.UiAddShop):
             cur.execute('SELECT * FROM shops WHERE name = %s', (name_shop,))
             last_product = cur.fetchall()
             if not last_product:
-                cur.execute("INSERT INTO shops (name, key, type_key) VALUES (%s, %s, %s)",
+                cur.execute("INSERT INTO shops (name, keys, type_key) VALUES (%s, %s, %s)",
                             (name_shop, name_class, type_class))
                 self.flag = True
                 self.close()

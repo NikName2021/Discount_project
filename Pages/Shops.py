@@ -13,6 +13,7 @@ class Shops(QDialog, shops.Ui_Dialog):
     """Класс диалогового окна для просмотра магазинов и добавления новых"""
     def __init__(self):
         self.flag = False
+        self.flag_on_del = False
         super(Shops, self).__init__()
         self.setupUi(self)
         self.setWindowTitle('Shops')
@@ -66,6 +67,7 @@ class Shops(QDialog, shops.Ui_Dialog):
         if confirm_del.flag:
             cur.execute(f"DELETE from shops where id = %s", (int(id_shop),))
             self.load_date(self.load_shop())
+            self.flag_on_del = True
 
     def setting(self):
         id_shop = self.sender().objectName()

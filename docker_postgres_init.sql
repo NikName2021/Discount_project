@@ -1,8 +1,8 @@
 CREATE TABLE Shops
 (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    key VARCHAR(255),
+    id SERIAL PRIMARY KEY UNIQUE,
+    name VARCHAR(255) UNIQUE,
+    keys VARCHAR(255),
     type_key VARCHAR(255),
     image_key VARCHAR(255),
     image_type_key VARCHAR
@@ -10,9 +10,9 @@ CREATE TABLE Shops
 
 CREATE TABLE Urls
 (
-    id SERIAL PRIMARY KEY,
-    shop VARCHAR(255),
-    name VARCHAR INTEGER REFERENCES Shops (name) ON DELETE CASCADE,
+    id SERIAL PRIMARY KEY UNIQUE,
+    shop VARCHAR(255) REFERENCES Shops (name) ON DELETE CASCADE,
+    name VARCHAR,
     url VARCHAR,
     last_prices REAL,
     prices REAL,
@@ -38,6 +38,6 @@ CREATE TABLE Prices
 );
 
 
-INSERT INTO shops (id, name, key, type_key, image_key, image_type_key) VALUES (2, 'Ozon', 'v0n', 'span', null, null);
-INSERT INTO shops (id, name, key, type_key, image_key, image_type_key) VALUES (1, 'Wildberries', 'price-block__final-price', 'ins', 'img', 'photo-zoom__preview j-zoom-image hide');
-INSERT INTO shops (id, name, key, type_key, image_key, image_type_key) VALUES (6, 'Mvideo', 'price__main-value', 'span', 'img', 'zoomable-image__image');
+INSERT INTO shops (name, keys, type_key, image_key, image_type_key) VALUES ('Ozon', 'v0n', 'span', null, null);
+INSERT INTO shops (name, keys, type_key, image_key, image_type_key) VALUES ('Wildberries', 'price-block__final-price', 'ins', 'img', 'photo-zoom__preview j-zoom-image hide');
+INSERT INTO shops (name, keys, type_key, image_key, image_type_key) VALUES ('Mvideo', 'price__main-value', 'span', 'img', 'zoomable-image__image');

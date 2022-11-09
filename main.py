@@ -83,6 +83,8 @@ class MyWidget(QMainWindow, main_window.Ui_MainWindow):
     def shops(self):
         all_shops = Shops.Shops()
         all_shops.exec_()
+        if all_shops.flag_on_del:
+            self.tabChange()
 
     def main_load_date(self):
         # получение товаров для главной категории(все товары из бд)
