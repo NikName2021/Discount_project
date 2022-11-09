@@ -13,6 +13,7 @@ class GrafOfPrice(QDialog, graf_matrolib.Ui_Dialog):
     def __init__(self, id_product):
         super(GrafOfPrice, self).__init__()
         self.setupUi(self)
+        self.setWindowTitle('Graph')
         self.id_product = int(id_product)
         self.figure = plt.figure()
         self.canvas = FigureCanvas(self.figure)
@@ -26,18 +27,27 @@ class GrafOfPrice(QDialog, graf_matrolib.Ui_Dialog):
         cur.execute(f"SELECT * from prices where id_product = %s order by id", (self.id_product,))
         prices = cur.fetchall()
 
-        discount = [0] + [i[2] for i in prices]  # все ценники для товара
-        count = [i for i in range(len(prices) + 1)]  # количество ценников по x
+        discount = [i[2] for i in prices]  # все ценники для товара
+        count = [i for i in range(len(prices))]  # количество ценников по x
         signature = [i[3]+timedelta(hours=3) for i in prices]  # добавление 3 часов к всемирному времени
 
         # все время для ценников
-        signature = [0] + [i.strftime("%y.%m.%d:%H.%M.%S") for i in signature]
+        signature = [str(i.strftime("%d.%m.%y _ %H.%M")) for i in signature]
+        axes = self.figure.subplots()
 
-        ax = self.figure.add_subplot(111)
-        # построение графика
-        ax.plot(count, discount, '-')
-        # замена нумераций на время
-        ax.set_xticks(count, labels=signature)
+        # axes.hlines(y=discount, xmin=0, xmax=len(count),  color='gray',  linewidth=1, linestyles='dashdot')
+        # axes.scatter(y=discount, x=count, color='firebrick',)
+
+        axes.vlines(count, ymin=0, ymax=discount, color="y")
+        axes.plot(count, discount, "o", color="y")
+
+        axes.set_ylim(0, int(max(discount) * 1.3))
+        axes.set_xticks(count)
+        axes.set_xticklabels(signature, rotation=30,
+                           fontdict={'horizontalalignment': 'right', 'size': 8})
+
+        for i_x, i_y in zip(count, discount):
+            axes.text(i_x, i_y, i_y, horizontalalignment='center', verticalalignment='bottom')
 
         self.canvas.draw()
 
