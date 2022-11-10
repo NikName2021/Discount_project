@@ -24,8 +24,8 @@ class GrafOfPrice(QDialog, graf_matrolib.Ui_Dialog):
         self.plot()
 
     def plot(self):
-        cur.execute(f"SELECT * from prices where id_product = %s order by id", (self.id_product,))
-        prices = cur.fetchall()
+        cur.execute(f"SELECT * from prices where id_product = %s order by id DESC LIMIT 8", (self.id_product,))
+        prices = cur.fetchall()[::-1]
 
         discount = [i[2] for i in prices]  # все ценники для товара
         count = [i for i in range(len(prices))]  # количество ценников по x
@@ -44,7 +44,7 @@ class GrafOfPrice(QDialog, graf_matrolib.Ui_Dialog):
         axes.set_ylim(0, int(max(discount) * 1.3))
         axes.set_xticks(count)
         axes.set_xticklabels(signature, rotation=30,
-                           fontdict={'horizontalalignment': 'right', 'size': 8})
+                             fontdict={'horizontalalignment': 'right', 'size': 8})
 
         for i_x, i_y in zip(count, discount):
             axes.text(i_x, i_y, i_y, horizontalalignment='center', verticalalignment='bottom')

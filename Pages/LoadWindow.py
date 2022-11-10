@@ -1,6 +1,7 @@
-from PyQt5 import uic
 from PyQt5.QtCore import QThread
 from PyQt5.QtWidgets import QDialog
+
+from PyBlades import load
 from par import one_pars
 
 
@@ -14,12 +15,12 @@ class Downloader(QThread):
         one_pars(self.product)
 
 
-class LoadWindow(QDialog):
+class LoadWindow(QDialog, load.Ui_Dialog):
     """Окно ожидания загрузки"""
 
     def __init__(self, product):
         super(LoadWindow, self).__init__()
-        uic.loadUi('blade/load.ui', self)
+        self.setupUi(self)
         self.setWindowTitle('Loading')
         self.product = product
 

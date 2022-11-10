@@ -6,3 +6,5 @@ from PyBlades import graf_matrolib
 from PyBlades import add_product
 from PyBlades import shops
 from PyBlades import setting_photo
+from PyBlades import main_profil
+from PyBlades import load

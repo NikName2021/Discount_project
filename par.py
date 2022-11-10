@@ -5,6 +5,7 @@ from PIL import Image
 import time
 
 from connection import cur, conn
+from connection_bot import bot
 
 
 def parser(url):
@@ -66,13 +67,29 @@ def download_image(page, id_product, key, name_key):
         print(ex)
 
 
-def one_pars(product):
+def send_message(product, price):
+    with open('config/profile.txt', 'rt', encoding='UTF-8') as file:
+        id_user = file.readline()
+    if id_user.isdigit():
+        try:
+            bot.send_message(int(id_user), f"""Цена на {product[2]} изменилась с {product[4]} на {price}
+Успей купить!
+{product[3]}""")
+        except Exception as ex:
+            print("Не удалось отправить сообщение пользователю...")
+            print(ex)
+
+
+def one_pars(product, work_bot=False):
     """ Функция парсинга для одного товара"""
+    print(f"Парсинг товара с id{product[0]}")
     cur.execute("SELECT * FROM shops WHERE name = %s", (product[1],))
     keys = cur.fetchone()
     page = parser(product[3])
     # вызываем парсер страницы
     price = price_bs4(page, keys[2], keys[3])
+    if product[4] > price > 0 and bot:
+        send_message(product, price)
     # поиск цены с помощью BeautifulSoup
     cur.execute(f'Update urls set last_prices = %s where id = %s', (price, product[0]))
     # сохраняем новое значение цены
@@ -84,13 +101,20 @@ def one_pars(product):
         cur.execute(f'Update urls set image = %s where id = %s', (statys, product[0]))
 
 
-def all_pars():
+def all_pars(work_bot=False):
     """Функция парсинга всех товаров"""
 
     cur.execute("SELECT * FROM urls ORDER BY id")
     products = cur.fetchall()
+    print("Начался парсинг...")
     for product in products:
-        one_pars(product)
+        one_pars(product, work_bot=True)
+
+    print("Парсинг успешно закончен")
+
+
+def parsing_with_bot():
+    all_pars(work_bot=True)
 
 
 if __name__ == '__main__':
