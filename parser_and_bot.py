@@ -28,7 +28,7 @@ def scheduler():
     """
     Функция - таймер
     """
-    schedule.every(2).minutes.do(parsing_with_bot)
+    schedule.every(60).minutes.do(parsing_with_bot)
     # каждые час запускаем функцию "all_pars"
     while True:
         schedule.run_pending()
